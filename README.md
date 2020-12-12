@@ -11,9 +11,9 @@ Library created for follow up corporate standards of application configuration.
 ## Installation
 
 ```bash
-npm install --save @microparts/configuration-js
+npm install --save @spacetab-io/configuration-js
 // or
-yarn add @microparts/configuration-js
+yarn add @spacetab-io/configuration-js
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ loading from `/app/configuration` with `local` stage.
 
 1) Simple
 ```ts
-import { Configuration } from '@microparts/configuration-js';
+import { Configuration } from '@spacetab-io/configuration-js';
 
 const conf = new Configuration();
 conf.load();
@@ -36,7 +36,7 @@ console.log(conf.get('foo.bar')); // get nested key use dot notation
 class constructor or set up use setters.
 
 ```ts
-import { Configuration } from '@microparts/configuration-js';
+import { Configuration } from '@spacetab-io/configuration-js';
 
 const conf = new Configuration('./configuration', 'test');
 // or
@@ -56,7 +56,7 @@ export STAGE=prod
 ```
 
 ```ts
-import { Configuration } from '@microparts/configuration-js';
+import { Configuration } from '@spacetab-io/configuration-js';
 
 const conf = new Configuration('./configuration', 'test');
 conf.load(); // loaded files from /configuration for prod stage.
@@ -69,7 +69,7 @@ pass you logger to property:
 
 Pass it like this:
 ```ts
-import { Configuration, StdoutConsoleLogger } from '@microparts/configuration-js';
+import { Configuration, StdoutConsoleLogger } from '@spacetab-io/configuration-js';
 
 const conf = new Configuration();
 conf.logger = new StdoutConsoleLogger();
@@ -92,7 +92,7 @@ npm install --save winston
 
 Second, pass you logger to property like this:
 ```ts
-import { Configuration, WinstonConsoleLogger, StdoutConsoleLogger } from '@microparts/configuration-js';
+import { Configuration, WinstonConsoleLogger, StdoutConsoleLogger } from '@spacetab-io/configuration-js';
 
 const conf = new Configuration();
 conf.logger = new WinstonConsoleLogger(winston.createLogger({
@@ -107,7 +107,7 @@ conf.get('foo'); // get value of `foo`
 ## How to usage library with SPA apps?
 
 **Note:** <br>
-https://github.com/microparts/static-server-php is required for usage on the server/cloud.
+https://github.com/spacetab-io/static-server-php is required for usage on the server/cloud.
 
 For most cases, this [Dockerfile](./example/vue-app/Dockerfile) can help your application build's in the cloud.
 
@@ -119,12 +119,12 @@ vue create vue-app
 ```
 2. Install this package
 ```bash
-npm install --save @microparts/configuration-js
+npm install --save @spacetab-io/configuration-js
 ```
 3. Put config files [like this](./example/vue-app/configuration)
 4. Change `vue.config.js` to build final config to global variables:
 ```js
-const { Configuration, StdoutConsoleLogger } = require('@microparts/configuration-js');
+const { Configuration, StdoutConsoleLogger } = require('@spacetab-io/configuration-js');
 
 module.exports = {
   lintOnSave: false,
