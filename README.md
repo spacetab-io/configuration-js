@@ -18,7 +18,7 @@ yarn add @microparts/configuration-js
 
 ## Usage
 
-By default path to configuration directory and application stage
+By default, path to configuration directory and application stage
 loading from `/app/configuration` with `local` stage.
 
 1) Simple
